@@ -10,19 +10,17 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class InsertSchools {
-	
+
 	private Connection connection;
-	
-	public InsertSchools(Connection connection)
-	{
+
+	public InsertSchools(Connection connection) {
 		this.connection = connection;
 	}
-	
-	public void run() throws Exception
-	{
+
+	public void run() throws Exception {
 		Statement statement = connection.createStatement();
 		String query;
-		
+
 		BufferedReader br = new BufferedReader(new FileReader("resources/Universities-Canada.txt"));
 		String text;
 		InputStream stream;
@@ -41,11 +39,13 @@ public class InsertSchools {
 		}
 
 		Scanner sc = new Scanner(stream);
-		
+
 		while (sc.hasNextLine()) {
 			query = "INSERT INTO School (name) VALUES ('" + sc.nextLine() + "');";
 			System.out.println(query);
 			statement.executeUpdate(query);
 		}
+
+		sc.close();
 	}
 }

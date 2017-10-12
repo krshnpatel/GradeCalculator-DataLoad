@@ -9,18 +9,18 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class InsertNames {
+public class InsertStudents {
 
 	private Connection connection;
-	
-	public InsertNames(Connection connection) {
+
+	public InsertStudents(Connection connection) {
 		this.connection = connection;
 	}
-	
-	public void run() throws Exception{
+
+	public void run() throws Exception {
 		Statement statement = connection.createStatement();
 		String query;
-		
+
 		BufferedReader br = new BufferedReader(new FileReader("resources/Names.txt"));
 		String text;
 		InputStream stream;
@@ -41,13 +41,16 @@ public class InsertNames {
 		Scanner sc = new Scanner(stream);
 		int schoolId = 1;
 		while (sc.hasNextLine()) {
-			String [] name = sc.nextLine().trim().split(" ");
-			query = "INSERT INTO Student (firstName, lastName, schoolId) VALUES ('" + name[0] + "','" + name[1] + "','" + schoolId++ + "');";
+			String[] name = sc.nextLine().trim().split(" ");
+			query = "INSERT INTO Student (firstName, lastName, schoolId) VALUES ('" + name[0] + "','" + name[1] + "','"
+					+ schoolId++ + "');";
 			System.out.println(query);
-			if (schoolId == 100){
+			if (schoolId == 100) {
 				schoolId = 1;
 			}
 			statement.executeUpdate(query);
 		}
+
+		sc.close();
 	}
 }
