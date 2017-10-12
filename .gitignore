@@ -1,0 +1,7 @@
+/bin/DataLoad/
+
+# System Files
+**.DS_Store
+
+# Logs
+**.log
