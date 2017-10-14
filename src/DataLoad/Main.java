@@ -29,6 +29,9 @@ public class Main {
 
 		// InsertTerms terms = new InsertTerms(connection);
 		// terms.run();
+		
+		InsertCourses courses = new InsertCourses(connection);
+		courses.run();
 	}
 
 }
