@@ -1,5 +1,6 @@
 package DataLoad;
 
-public class InsertCourses {
-
+public class InsertCourses
+{
+	
 }

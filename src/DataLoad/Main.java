@@ -2,33 +2,92 @@ package DataLoad;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Scanner;
 
-public class Main {
-
-	public static void main(String[] args) throws Exception {
-
+public class Main
+{
+	public static void main(String[] args) throws Exception
+	{
 		String serverName = "localhost:3306";
 		String mydatabase = "gradecalculator";
 		String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
-
+		
 		String username = "root";
 		String password = "gradecalculator";
 		Connection connection = DriverManager.getConnection(url, username, password);
-
+		
 		if (connection != null)
 			System.out.println("Connection Successful!!!");
-
-		// Remove remove = new Remove(connection);
-		// remove.deleteAllTables();
-
-		// InsertSchools schools = new InsertSchools(connection);
-		// schools.run();
-
-		// InsertStudents students = new InsertStudents(connection);
-		// students.run();
-
-		// InsertTerms terms = new InsertTerms(connection);
-		// terms.run();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("MENU");
+		System.out.println("1. Insert schools");
+		System.out.println("2. Insert terms");
+		System.out.println("3. Insert students");
+		System.out.println("4. Insert courses");
+		System.out.println("5. Insert evaluations");
+		System.out.println("6. Insert all tables");
+		System.out.println("7. Delete all tables");
+		
+		int menuChoice = sc.nextInt();
+		
+		switch (menuChoice)
+		{
+			case 1:
+			{
+				InsertSchools schools = new InsertSchools(connection);
+				schools.run();
+				break;
+			}
+			case 2:
+			{
+				InsertTerms terms = new InsertTerms(connection);
+				terms.run();
+				break;
+			}
+			case 3:
+			{
+				InsertStudents students = new InsertStudents(connection);
+				students.run();
+				break;
+			}
+			case 4:
+			{
+				// InsertCourses courses = new InsertCourses(connection);
+				// courses.run();
+				break;
+			}
+			case 5:
+			{
+				// InsertEvaluations evaluations = new
+				// InsertEvaluations(connection);
+				// evaluations.run();
+				break;
+			}
+			case 6:
+			{
+				InsertSchools schools = new InsertSchools(connection);
+				schools.run();
+				InsertTerms terms = new InsertTerms(connection);
+				terms.run();
+				InsertStudents students = new InsertStudents(connection);
+				students.run();
+				// InsertCourses courses = new InsertCourses(connection);
+				// courses.run();
+				// InsertEvaluations evaluations = new
+				// InsertEvaluations(connection);
+				// evaluations.run();
+				break;
+			}
+			case 7:
+			{
+				Remove remove = new Remove(connection);
+				remove.deleteAllTables();
+				break;
+			}
+		}
+		sc.close();
 	}
-
+	
 }
