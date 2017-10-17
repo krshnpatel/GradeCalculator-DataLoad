@@ -55,8 +55,8 @@ public class Main
 			}
 			case 4:
 			{
-				// InsertCourses courses = new InsertCourses(connection);
-				// courses.run();
+				InsertCourses courses = new InsertCourses(connection);
+				courses.run();
 				break;
 			}
 			case 5:
@@ -74,8 +74,8 @@ public class Main
 				terms.run();
 				InsertStudents students = new InsertStudents(connection);
 				students.run();
-				// InsertCourses courses = new InsertCourses(connection);
-				// courses.run();
+				InsertCourses courses = new InsertCourses(connection);
+				courses.run();
 				// InsertEvaluations evaluations = new
 				// InsertEvaluations(connection);
 				// evaluations.run();

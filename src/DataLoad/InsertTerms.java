@@ -7,7 +7,7 @@ public class InsertTerms
 {
 	private Connection connection;
 	private int[] years = { 1, 2, 3, 4, 5 };
-	private String[] seasons = { "fall", "winter", "spring", "summer" };
+	private String[] semesters = { "0", "1", "2" };
 	
 	public InsertTerms(Connection connection)
 	{
@@ -23,9 +23,9 @@ public class InsertTerms
 	
 	public void run() throws Exception
 	{
-		for (int i = 0; i < (years.length * seasons.length); i++)
+		for (int i = 0; i < (years.length * semesters.length); i++)
 		{
-			String query = "INSERT INTO Term (year, season) VALUES ('" + years[i % years.length] + "','" + seasons[i % seasons.length] + "');";
+			String query = "INSERT INTO Term (year, semester) VALUES ('" + years[i % years.length] + "','" + semesters[i % semesters.length] + "');";
 			this.update(query);
 		}
 		System.out.println("COMPLETED INSERTING TERMS");
