@@ -27,8 +27,9 @@ public class Main
 		System.out.println("3. Insert students");
 		System.out.println("4. Insert courses");
 		System.out.println("5. Insert evaluations");
-		System.out.println("6. Insert all tables");
-		System.out.println("7. Delete all tables");
+		System.out.println("6. Insert entries in all tables");
+		System.out.println("7. DELETE ALL ENTRIES IN EVERY TABLE");
+		System.out.println("8. DELETE ALL TABLES");
 		
 		int menuChoice = sc.nextInt();
 		
@@ -81,6 +82,12 @@ public class Main
 				break;
 			}
 			case 7:
+			{
+				Remove remove = new Remove(connection);
+				remove.deleteAllEntries();
+				break;
+			}
+			case 8:
 			{
 				Remove remove = new Remove(connection);
 				remove.deleteAllTables();
