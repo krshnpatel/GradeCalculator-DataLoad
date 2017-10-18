@@ -7,7 +7,7 @@ public class InsertTerms
 {
 	private Connection connection;
 	private int[] years = { 1, 2, 3, 4, 5 };
-	private String[] semesters = { "0", "1", "2" };
+	private String[] semesters = { "0", "1", "2", "3" }; // 0=full-yr, 1=semester1, 2=semester2, 3=notDuringSchoolYear
 	
 	public InsertTerms(Connection connection)
 	{
