@@ -21,6 +21,7 @@ public class Remove
 		statement.executeUpdate("ALTER TABLE Evaluation AUTO_INCREMENT = 1;");
 		statement.executeUpdate("DELETE FROM Course WHERE id > 0;");
 		statement.executeUpdate("ALTER TABLE Course AUTO_INCREMENT = 1;");
+		statement.executeUpdate("DELETE FROM StudentTerm WHERE studentId > 0;");
 		statement.executeUpdate("DELETE FROM Student WHERE id > 0;");
 		statement.executeUpdate("ALTER TABLE Student AUTO_INCREMENT = 1;");
 		statement.executeUpdate("DELETE FROM School WHERE id > 0;");
@@ -35,6 +36,7 @@ public class Remove
 	{
 		statement.executeUpdate("DROP TABLE Evaluation;");
 		statement.executeUpdate("DROP TABLE Course;");
+		statement.executeUpdate("DROP TABLE StudentTerm;");
 		statement.executeUpdate("DROP TABLE Student;");
 		statement.executeUpdate("DROP TABLE Term;");
 		statement.executeUpdate("DROP TABLE School;");

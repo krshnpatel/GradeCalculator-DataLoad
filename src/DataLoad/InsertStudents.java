@@ -49,7 +49,7 @@ public class InsertStudents
 		while (sc.hasNextLine())
 		{
 			String[] name = sc.nextLine().trim().split(" ");
-			query = "INSERT INTO Student (firstName, lastName, schoolId) VALUES ('" + name[0] + "','" + name[1] + "','" + schoolId++ + "');";
+			query = "INSERT INTO Student (firstName, lastName, schoolId, username, password) VALUES ('" + name[0] + "','" + name[1] + "','" + schoolId++ + "','" + name[0].toLowerCase() + name[1].toLowerCase() + schoolId + "','hello');";
 			System.out.println(query);
 			if (schoolId == 100)
 			{

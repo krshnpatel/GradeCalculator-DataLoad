@@ -25,11 +25,12 @@ public class Main
 		System.out.println("1. Insert schools");
 		System.out.println("2. Insert terms");
 		System.out.println("3. Insert students");
-		System.out.println("4. Insert courses");
-		System.out.println("5. Insert evaluations");
-		System.out.println("6. Insert entries in all tables");
-		System.out.println("7. DELETE ALL ENTRIES IN EVERY TABLE");
-		System.out.println("8. DELETE ALL TABLES");
+		System.out.println("4. Insert student terms");
+		System.out.println("5. Insert courses");
+		System.out.println("6. Insert evaluations");
+		System.out.println("7. Insert entries in all tables");
+		System.out.println("8. DELETE ALL ENTRIES IN EVERY TABLE");
+		System.out.println("9. DELETE ALL TABLES");
 		
 		int menuChoice = sc.nextInt();
 		
@@ -55,27 +56,19 @@ public class Main
 			}
 			case 4:
 			{
-				InsertCourses courses = new InsertCourses(connection);
-				courses.run();
+				// InsertStudentTerms studentTerms = new
+				// InsertStudentTerms(connection);
+				// studentTerms.run();
 				break;
 			}
 			case 5:
 			{
-				// InsertEvaluations evaluations = new
-				// InsertEvaluations(connection);
-				// evaluations.run();
+				InsertCourses courses = new InsertCourses(connection);
+				courses.run();
 				break;
 			}
 			case 6:
 			{
-				InsertSchools schools = new InsertSchools(connection);
-				schools.run();
-				InsertTerms terms = new InsertTerms(connection);
-				terms.run();
-				InsertStudents students = new InsertStudents(connection);
-				students.run();
-				InsertCourses courses = new InsertCourses(connection);
-				courses.run();
 				// InsertEvaluations evaluations = new
 				// InsertEvaluations(connection);
 				// evaluations.run();
@@ -83,11 +76,29 @@ public class Main
 			}
 			case 7:
 			{
+				InsertSchools schools = new InsertSchools(connection);
+				schools.run();
+				InsertTerms terms = new InsertTerms(connection);
+				terms.run();
+				InsertStudents students = new InsertStudents(connection);
+				students.run();
+				// InsertStudentTerms studentTerms = new
+				// InsertStudentTerms(connection);
+				// studentTerms.run();
+				InsertCourses courses = new InsertCourses(connection);
+				courses.run();
+				// InsertEvaluations evaluations = new
+				// InsertEvaluations(connection);
+				// evaluations.run();
+				break;
+			}
+			case 8:
+			{
 				Remove remove = new Remove(connection);
 				remove.deleteAllEntries();
 				break;
 			}
-			case 8:
+			case 9:
 			{
 				Remove remove = new Remove(connection);
 				remove.deleteAllTables();
