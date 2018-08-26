@@ -91,21 +91,22 @@ public class InsertCourses
 					// System.out.println(code + " --- " + courseWeight);
 				}
 				
-				String year = code.substring(0, 1);
+//				String year = code.substring(0, 1);
+//				
+//				if (year.equals("0"))
+//				{
+//					int temp = rand.nextInt(5) + 1;
+//					year = Integer.toString(temp);
+//				}
+//				
+//				ResultSet rs = statement.executeQuery("SELECT * FROM Term WHERE year=" + year + " AND semester=" + semester + ";");
+//				
+//				if (rs.next())
+//					termId = rs.getInt("id");
 				
-				if (year.equals("0"))
-				{
-					int temp = rand.nextInt(5) + 1;
-					year = Integer.toString(temp);
-				}
-				
-				ResultSet rs = statement.executeQuery("SELECT * FROM Term WHERE year=" + year + " AND semester=" + semester + ";");
-				
-				if (rs.next())
-					termId = rs.getInt("id");
-				
-				query = "INSERT INTO Course (name, weight, code, prefix, termId, schoolId) VALUES ('" + courseName + "'," + courseWeight + ",'" + code + "','" + prefix + "'," + termId + "," + schoolId + ");";
-				
+				//query = "INSERT INTO Course (name, weight, code, prefix, termId, schoolId) VALUES ('" + courseName + "'," + courseWeight + ",'" + code + "','" + prefix + "'," + termId + "," + schoolId + ");";
+				query = "INSERT INTO Course (name, weight, code, prefix, schoolId) VALUES ('" + courseName + "'," + courseWeight + ",'" + code + "','" + prefix + "'," + schoolId + ");";
+
 				System.out.println(query);
 				
 				text = br.readLine();

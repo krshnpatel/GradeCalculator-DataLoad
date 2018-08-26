@@ -9,7 +9,7 @@ public class Main
 	public static void main(String[] args) throws Exception
 	{
 		String serverName = "localhost:3306";
-		String mydatabase = "gradecalculator";
+		String mydatabase = "gradecalculator2";
 		String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
 		
 		String username = "root";
@@ -44,9 +44,9 @@ public class Main
 			}
 			case 2:
 			{
-				InsertTerms terms = new InsertTerms(connection);
-				terms.run();
-				break;
+//				InsertTerms terms = new InsertTerms(connection);
+//				terms.run();
+//				break;
 			}
 			case 3:
 			{
